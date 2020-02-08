@@ -8,7 +8,7 @@ Jądro definiuje podstawowe założenia dla projektu.
 Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki będzie to wykonane określa implementacja interfejsu **IParser**.
 
 ### Wczytywanie
-
+````Java
 	IParser parser;
 	InputStream input;
 	String key;
@@ -23,9 +23,9 @@ Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki b
 	} catch (IOException ex) {
 		// obsługa wyjątku
 	}
-	
+````
 ### Zapisywanie
-
+````Java
 	Data data = new DataBuilder().
 		.put("count", 5) // - przykładowe dane
 		.build();
@@ -39,3 +39,4 @@ Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki b
 	} catch (IOException ex) {
 		...
 	}
+`````
