@@ -9,34 +9,33 @@ Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki b
 
 ### Wczytywanie
 ````Java
-	IParser parser;
-	InputStream input;
-	String key;
+IParser parser;
+InputStream input;
+String key;
 	
-	// inicjalizowanie powyższych zmiennych
+// inicjalizowanie powyższych zmiennych
 	
-	Object desiredValue = null;
-	try {
-		Data data = parser.load(input);
-		if (data.containKey(key))
-			desiredValue = key;
-	} catch (IOException ex) {
-		// obsługa wyjątku
-	}
+Object desiredValue = null;
+try {
+    Data data = parser.load(input);
+    if (data.containKey(key)) desiredValue = key;
+} catch (IOException ex) {
+    // obsługa wyjątku
+}
 ````
 ### Zapisywanie
 ````Java
-	Data data = new DataBuilder().
-		.put("count", 5) // - przykładowe dane
-		.build();
-	IParser parser;
-	OutputStream output;
-	
-	// inicjalizowanie zmiennych parser i output
-	
-	try {
-		parser.save(output, data);
-	} catch (IOException ex) {
-		...
-	}
+Data data = new DataBuilder().
+	.put("count", 5) // - przykładowe dane
+	.build();
+IParser parser;
+OutputStream output;
+
+// inicjalizowanie zmiennych parser i output
+
+try {
+    parser.save(output, data);
+} catch (IOException ex) {
+    // obsługa wyjątku
+}
 `````
