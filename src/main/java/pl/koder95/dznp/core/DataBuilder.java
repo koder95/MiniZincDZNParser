@@ -5,7 +5,11 @@
  */
 package pl.koder95.dznp.core;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * Budowniczy interfejsu, który zawiera dane wczytane z pliku DZN.
@@ -34,7 +38,7 @@ public class DataBuilder {
     
     /**
      * Pozwala modyfikować mapę, przypisując kluczowi wartość.
-     * 
+     *
      * @param key klucz dostępu do wartości
      * @param value wartość skojarzona z kluczem
      * @return {@code this}
