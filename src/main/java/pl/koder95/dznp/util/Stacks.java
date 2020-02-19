@@ -18,7 +18,7 @@ public final class Stacks {
 	@SuppressWarnings("unchecked")
 	public static <E> E getType(Stack<Object> stack, Class<?> c) {
 		Object obj = stack.pop();
-		if (obj.getClass().isInstance(c)) return (E) obj;
+		if (c.isInstance(obj)) return (E) obj;
 		stack.add(obj);
 		return null;
 	}
