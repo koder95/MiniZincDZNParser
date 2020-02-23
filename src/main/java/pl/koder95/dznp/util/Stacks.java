@@ -10,7 +10,7 @@ public final class Stacks {
 		for (Object o : objects) stack.add(o);
 	}
 	
-	public static void returnToStackAndThrow(Stack<Object> stack, Exception ex, Object...objects) throws Exception {
+	public static <E extends Exception> void returnToStackAndThrow(Stack<Object> stack, E ex, Object...objects) throws E {
 		returnToStack(stack, objects);
 		throw ex;
 	}

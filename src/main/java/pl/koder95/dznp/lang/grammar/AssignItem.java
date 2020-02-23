@@ -29,8 +29,7 @@ public class AssignItem {
     public String toString() {
         return "Assign " +
                 "object " + expr.asObject() + " " +
-                "to ident " + ident +
-                '.';
+                "to " + ident + '.';
     }
 
     public void addToBuilder(DataBuilder builder) {
@@ -39,11 +38,11 @@ public class AssignItem {
 
     public static AssignItem from(Stack<Object> stack) throws IOException {
         Expr<?> expr = Stacks.getType(stack, Expr.class);
-        if (expr == null) throw new IOException();
+        if (expr == null) expr = Expr.from(stack);
         String equivalent = Stacks.getType(stack, String.class);
         if (equivalent == null || !equivalent.equals("=")) throw new IOException();
         Ident ident = Stacks.getType(stack, Ident.class);
-        if (ident == null) throw new IOException();
+        if (ident == null) ident = Ident.from(stack);
         return new AssignItem(ident, expr);
     }
 }

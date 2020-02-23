@@ -18,18 +18,25 @@ public class Model {
     }
 
     public static Model from(Stack<Object> stack) throws IOException {
+        // Creating list of AssignItem
         List<AssignItem> assignItemList = new ArrayList<>();
+        String sign = Stacks.getType(stack, String.class); // - get top element if it is String
+        // Checking that sign is ";" sign. If it is not, throws exception;
+        if (sign != null && !sign.equals(";")) throw new IOException();
         while (!stack.empty()) {
-            String sign = Stacks.getType(stack, String.class);
-            if (sign == null || !sign.equals(";")) break;
             addAssignItemFromStack(stack, assignItemList);
+            if (!stack.empty()) {
+                sign = Stacks.getType(stack, String.class);
+                if (sign == null || !sign.equals(";")) break;
+            }
         }
         return new Model(assignItemList);
     }
 
     private static void addAssignItemFromStack(Stack<Object> stack, List<AssignItem> assignItemList) throws IOException {
         AssignItem assignItem = Stacks.getType(stack, AssignItem.class);
-        if (assignItem == null) throw new IOException();
+        if (assignItem == null)
+            assignItem = AssignItem.from(stack);
         assignItemList.add(assignItem);
     }
 }

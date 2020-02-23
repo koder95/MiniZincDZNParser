@@ -12,7 +12,7 @@ class ModelTest extends GroovyTestCase {
         stack = null;
     }
 
-    void testPositiveFrom() {
+    void testFrom() {
         stack.push(new AssignItem(new Ident("key"), new Expr<Object>()))
         stack.push(";")
 
@@ -20,15 +20,13 @@ class ModelTest extends GroovyTestCase {
         println model
         println model.assignItemList
         assertEquals(false, model.assignItemList.isEmpty())
-    }
 
-    void testNegativeFrom() {
         stack.push(";")
         stack.push(new AssignItem(new Ident("key"), new Expr<Object>()))
 
-        Model model = Model.from(stack)
+        model = Model.from(stack)
         println model
         println model.assignItemList
-        assertEquals(true, model.assignItemList.isEmpty())
+        assertEquals(false, model.assignItemList.isEmpty())
     }
 }

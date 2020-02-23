@@ -13,25 +13,10 @@ class IdentTest extends GroovyTestCase {
         stack = null;
     }
 
-    void testFrom() {
-        testNegative();
-        testPositive();
-    }
-
     void testNegative() {
-        stack.push("Coś");
-        stack.push("jest");
-        stack.push("nie");
-        stack.push("tak");
-        stack.push("!");
-        try {
-            println Ident.from(stack);
-            fail();
-        } catch (IOException ex) {
-            println(ex)
-        }
-        stack.clear()
-        stack.push("something_OK")
+        String str = "To nie jest '" + '\\xa0' + "Ident'"
+        stack.push(str)
+
         try {
             println Ident.from(stack);
             fail();
@@ -41,6 +26,21 @@ class IdentTest extends GroovyTestCase {
     }
 
     void testPositive() {
+        stack.push("something_OK")
+        try {
+            println Ident.from(stack)
+        } catch (IOException ex) {
+            fail()
+        }
+        stack.clear()
+        String str = "'some \$% OK'"
+        for (char c : str.toCharArray()) stack.push(c)
 
+        try {
+            println Ident.from(stack)
+        } catch (IOException ex) {
+            ex.printStackTrace()
+            fail()
+        }
     }
 }
