@@ -1,5 +1,8 @@
 package pl.koder95.dznp.lang;
 
+import pl.koder95.dznp.core.Data;
+import pl.koder95.dznp.core.DataBuilder;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -64,5 +67,11 @@ public class Namespace {
 
     public Var get(String name) {
         return definedVariables.get(name);
+    }
+
+    public Data toData() {
+        DataBuilder builder = new DataBuilder();
+        definedVariables.forEach((k,v) -> builder.put(k, v.getValue()));
+        return builder.build();
     }
 }

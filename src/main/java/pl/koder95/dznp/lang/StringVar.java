@@ -10,4 +10,8 @@ public class StringVar extends Var<String> {
         this(name, "");
     }
 
+    @Override
+    public void setValue(String value) {
+        super.setValue(value);
+    }
 }

@@ -9,4 +9,9 @@ public class IntVar extends Var<Integer> {
     public IntVar(String name) {
         this(name, 0);
     }
+
+    @Override
+    public void setValue(Integer value) {
+        super.setValue(value);
+    }
 }

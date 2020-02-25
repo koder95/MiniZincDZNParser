@@ -9,4 +9,9 @@ public class BoolVar extends Var<Boolean> {
     public BoolVar(String name) {
         this(name, false);
     }
+
+    @Override
+    public void setValue(Boolean value) {
+        super.setValue(value);
+    }
 }

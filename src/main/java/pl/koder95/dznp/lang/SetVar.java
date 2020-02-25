@@ -12,4 +12,9 @@ public class SetVar<E> extends Var<Set<E>> {
     public SetVar(String name) {
         this(name, new HashSet());
     }
+
+    @Override
+    void setValue(Set<E> value) {
+        super.setValue(value);
+    }
 }

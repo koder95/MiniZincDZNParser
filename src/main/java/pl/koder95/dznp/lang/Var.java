@@ -17,7 +17,7 @@ public class Var<T> extends NamedObject {
         return value;
     }
 
-    public void setValue(T value) {
+    void setValue(T value) {
         this.value = value;
     }
 }

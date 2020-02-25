@@ -9,4 +9,9 @@ public class FloatVar extends Var<Float> {
     public FloatVar(String name) {
         this(name, 0f);
     }
+
+    @Override
+    public void setValue(Float value) {
+        super.setValue(value);
+    }
 }
