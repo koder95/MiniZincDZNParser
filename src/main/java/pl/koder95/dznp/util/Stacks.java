@@ -22,4 +22,8 @@ public final class Stacks {
 		stack.add(obj);
 		return null;
 	}
+
+    public static <E, S extends Stack<E>> S requireNonEmpty(S stack) {
+		return stack == null || stack.empty()? null : stack;
+    }
 }
