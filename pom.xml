@@ -1,34 +1,54 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>pl.koder95</groupId>
-  <artifactId>MiniZincDZNParser</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>pl.koder95</groupId>
+    <artifactId>dznp</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <name>MiniZincDZNParser</name>
-  <url>http://maven.apache.org</url>
-  <distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub OWNER Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/koder95/MiniZincDZNParser</url>
-   </repository>
-  </distributionManagement>
+    <name>MiniZinc DZN Parser</name>
+    <url>http://maven.apache.org</url>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>MiniZinc DZN Parser</name>
+            <url>https://maven.pkg.github.com/koder95/MiniZincDZNParser</url>
+        </repository>
+    </distributionManagement>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
-  </properties>
+    <scm>
+        <connection>scm:git:git://github.com/koder95/MiniZincDZNParser.git</connection>
+        <developerConnection>scm:git:ssh://github.com:koder95/MiniZincDZNParser.git</developerConnection>
+        <url>http://github.com/koder95/MiniZincDZNParser/tree/master</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>Kamil Mularski</name>
+            <email>kontakt@koder95.pl</email>
+            <organization>koder95</organization>
+            <organizationUrl>http://koder95.pl</organizationUrl>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 
-  <dependencies>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>RELEASE</version>
-          <scope>test</scope>
-      </dependency>
-  </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
