@@ -1,7 +1,5 @@
 package pl.koder95.dznp.lang;
 
-
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Function extends NamedObject {
