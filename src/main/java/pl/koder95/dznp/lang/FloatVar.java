@@ -14,4 +14,9 @@ public class FloatVar extends Var<Float> {
     public void setValue(Float value) {
         super.setValue(value);
     }
+
+    @Override
+    public Float getValue() {
+        return super.getValue();
+    }
 }

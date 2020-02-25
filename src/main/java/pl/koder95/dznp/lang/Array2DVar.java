@@ -16,4 +16,9 @@ public class Array2DVar<E> extends ArrayVar<ArrayList<E>> {
    public void setValue(ArrayList<ArrayList<E>> value) {
         super.setValue(value);
     }
+
+    @Override
+    public ArrayList<ArrayList<E>> getValue() {
+        return super.getValue();
+    }
 }

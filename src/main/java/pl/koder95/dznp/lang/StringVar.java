@@ -14,4 +14,9 @@ public class StringVar extends Var<String> {
     public void setValue(String value) {
         super.setValue(value);
     }
+
+    @Override
+    public String getValue() {
+        return super.getValue();
+    }
 }

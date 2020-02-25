@@ -17,4 +17,9 @@ public class SetVar<E> extends Var<Set<E>> {
     void setValue(Set<E> value) {
         super.setValue(value);
     }
+
+    @Override
+    public Set<E> getValue() {
+        return super.getValue();
+    }
 }

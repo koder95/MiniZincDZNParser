@@ -14,4 +14,9 @@ public class BoolVar extends Var<Boolean> {
     public void setValue(Boolean value) {
         super.setValue(value);
     }
+
+    @Override
+    public Boolean getValue() {
+        return super.getValue();
+    }
 }

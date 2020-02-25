@@ -14,4 +14,9 @@ public class IntVar extends Var<Integer> {
     public void setValue(Integer value) {
         super.setValue(value);
     }
+
+    @Override
+    public Integer getValue() {
+        return super.getValue();
+    }
 }

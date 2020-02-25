@@ -66,7 +66,7 @@ public class Namespace {
     }
 
     public Var get(String name) {
-        return definedVariables.get(name);
+        return definedVariables.getOrDefault(name, null);
     }
 
     public Data toData() {
