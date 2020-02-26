@@ -2,11 +2,11 @@ package pl.koder95.dznp.lang;
 
 public class IntVar extends Var<Integer> {
 
-    public IntVar(String name, int value) {
-        super(name, value);
+    IntVar(String name, int value) {
+        super(Type.INT, name, value);
     }
 
-    public IntVar(String name) {
+    IntVar(String name) {
         this(name, 0);
     }
 

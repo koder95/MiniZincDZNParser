@@ -5,11 +5,11 @@ import java.util.Set;
 
 public class SetVar<E> extends Var<Set<E>> {
 
-    public SetVar(String name, Set<E> value) {
-        super(name, value);
+    SetVar(String name, Set<E> value) {
+        super(Type.SET, name, value);
     }
 
-    public SetVar(String name) {
+    SetVar(String name) {
         this(name, new HashSet());
     }
 

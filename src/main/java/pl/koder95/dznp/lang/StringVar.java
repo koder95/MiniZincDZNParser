@@ -2,11 +2,11 @@ package pl.koder95.dznp.lang;
 
 public class StringVar extends Var<String> {
 
-    public StringVar(String name, String value) {
-        super(name, value);
+    StringVar(String name, String value) {
+        super(Type.STRING, name, value);
     }
 
-    public StringVar(String name) {
+    StringVar(String name) {
         this(name, "");
     }
 

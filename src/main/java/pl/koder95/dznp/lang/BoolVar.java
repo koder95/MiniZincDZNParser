@@ -2,11 +2,11 @@ package pl.koder95.dznp.lang;
 
 public class BoolVar extends Var<Boolean> {
 
-    public BoolVar(String name, Boolean value) {
-        super(name, value);
+    BoolVar(String name, Boolean value) {
+        super(Type.BOOL, name, value);
     }
 
-    public BoolVar(String name) {
+    BoolVar(String name) {
         this(name, false);
     }
 

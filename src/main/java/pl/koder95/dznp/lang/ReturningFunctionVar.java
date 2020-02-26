@@ -4,12 +4,12 @@ public class ReturningFunctionVar extends Var<Object> {
 
     private ReturningFunction returningFunction;
 
-    public ReturningFunctionVar(String name, ReturningFunction returningFunction) {
-        super(name, null);
+    ReturningFunctionVar(String name, ReturningFunction returningFunction) {
+        super(Type.RETURNING_FUNCTION, name, null);
         this.returningFunction = returningFunction;
     }
 
-    public ReturningFunctionVar(String name) {
+    ReturningFunctionVar(String name) {
         this(name, null);
     }
 

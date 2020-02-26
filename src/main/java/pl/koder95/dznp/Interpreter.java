@@ -18,6 +18,7 @@ public class Interpreter {
         Namespace ns = new Namespace();
         while (!stack.empty()) {
             // tworzenie nowych elementów w Namespace, ale narazie tylko drukowanie na standardowe wyjście
+
             System.out.println(stack.pop()); // TODO: uzupełnić pętlę, aby tworzyła nowe elementy
         }
         return ns;

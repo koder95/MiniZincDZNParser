@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Array2DVar<E> extends ArrayVar<ArrayList<E>> {
 
-    public Array2DVar(String name, ArrayList<ArrayList<E>> value) {
-        super(name, value);
+    Array2DVar(String name, ArrayList<ArrayList<E>> value) {
+        super(Type.ARRAY2D, name, value);
     }
 
-    public Array2DVar(String name) {
+    Array2DVar(String name) {
         this(name, new ArrayList<>());
     }
 
     @Override
-   public void setValue(ArrayList<ArrayList<E>> value) {
+    public void setValue(ArrayList<ArrayList<E>> value) {
         super.setValue(value);
     }
 

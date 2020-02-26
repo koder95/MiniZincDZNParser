@@ -61,7 +61,7 @@ public class Namespace {
         return createArray2D(name, Object.class);
     }
 
-    public ReturningFunctionVar createFunction(String name) {
+    public ReturningFunctionVar createReturningFunction(String name) {
         return createVar(new ReturningFunctionVar(name));
     }
 
