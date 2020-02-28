@@ -14,7 +14,7 @@ public class Interpreter {
         this.stack = Objects.requireNonNull(Stacks.requireNonEmpty(stack));
     }
 
-    public Namespace interpret() {
+    public Namespace interpret() throws ParserException {
         Namespace ns = new Namespace();
         while (!stack.empty()) {
             // tworzenie nowych elementów w Namespace, ale narazie tylko drukowanie na standardowe wyjście

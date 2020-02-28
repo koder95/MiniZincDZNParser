@@ -24,7 +24,7 @@ public class DZNParser implements IParser {
         return ns.toData();
     }
 
-    private Namespace interpret(Stack<Object> stack) {
+    private Namespace interpret(Stack<Object> stack) throws ParserException {
         return new Interpreter(stack).interpret();
     }
 

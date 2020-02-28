@@ -39,8 +39,7 @@ public class Var<T> extends NamedObject {
         public <E extends Var> E create(Namespace ns, String name) throws NoSuchMethodException,
                 InvocationTargetException, IllegalAccessException {
             String methodName = "create";
-            String typeName = type.getSimpleName();
-            methodName += typeName;
+            methodName += type.getSimpleName();
             if (methodName.endsWith("Var")) methodName = methodName.substring(0, methodName.lastIndexOf("Var"));
             Method method = ns.getClass().getDeclaredMethod(methodName, String.class);
             return (E) method.invoke(ns, name);
