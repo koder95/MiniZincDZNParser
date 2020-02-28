@@ -24,9 +24,10 @@ public final class Stacks {
 	 * @param stack stack of objects
 	 * @param ex exception to throw
 	 * @param objects objects in correct order
-	 * @throws Exception param {@code ex}
+   * @param <E> type of exception
+	 * @throws E param {@code ex}
 	 */
-	public static void returnToStackAndThrow(Stack<Object> stack, Exception ex, Object...objects) throws Exception {
+	public static <E extends Exception> void returnToStackAndThrow(Stack<Object> stack, E ex, Object...objects) throws E {
 		returnToStack(stack, objects);
 		throw ex;
 	}
