@@ -1,12 +1,15 @@
 /**
  * Jądro definiuje podstawowe założenia dla projektu.
- * 
- * <li>Interfejs {@link Data} definiuje sposób przechowywania danych. Jest on bardzo prosty, aby dostęp do określonych wartości był prosty.</li>
- * <li>Interfejs {@link IParser} definiuje jakie metody ma posiadać parser.</li>
- * <li>Klasa {@link DataBuilder} dostarcza budowniczego instancji interfejsu {@link Data}.</li>
- * 
+ * <ul>
+ * <li>Interfejs {@link pl.koder95.dznp.core.Data Data} definiuje sposób przechowywania danych. Jest on bardzo prosty,
+ * aby dostęp do określonych wartości był prosty.
+ * <li>Interfejs {@link pl.koder95.dznp.core.IParser IParser} definiuje jakie metody ma posiadać parser.
+ * <li>Klasa {@link pl.koder95.dznp.core.DataBuilder DataBuilder} dostarcza budowniczego instancji interfejsu
+ * {@link pl.koder95.dznp.core.Data Data}.
+ * </ul>
  * <h1>Używanie jądra</h1>
- * <p>Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki będzie to wykonane określa implementacja interfejsu {@link IParser}.
+ * <p>Jądro może być używane do wczytywania i zapisywania danych. Sposób w jaki będzie to wykonane określa
+ * implementacja interfejsu {@link pl.koder95.dznp.core.IParser IParser}.
  * <h2>Wczytywanie</h2>
  * <blockquote><pre>
  * 	IParser parser;
