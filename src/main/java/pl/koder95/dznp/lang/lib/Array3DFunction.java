@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Array3DFunction extends ReturningFunction {
 
-    public Array3DFunction(String name, Namespace parameters) {
+    public Array3DFunction(String name, Parameters parameters) {
         super(name, parameters);
     }
 

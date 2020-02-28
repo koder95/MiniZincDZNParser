@@ -4,18 +4,18 @@ import java.util.Objects;
 
 public class Function extends NamedObject {
 
-    private final Namespace parameters;
+    private final Parameters parameters;
 
-    public Function(String name, Namespace parameters) {
+    public Function(String name, Parameters parameters) {
         super(name);
         this.parameters = Objects.requireNonNull(parameters);
     }
 
     public Function(String name) {
-        this(name, new Namespace());
+        this(name, new Parameters());
     }
 
-    public Namespace getParameters() {
+    public Parameters getParameters() {
         return parameters;
     }
 }
