@@ -21,6 +21,10 @@ public class Ident {
         return value;
     }
 
+    public boolean isQuoted() {
+        return quoted(getValue());
+    }
+
     @Override
     public String toString() {
         return "Ident(" + value + ')';

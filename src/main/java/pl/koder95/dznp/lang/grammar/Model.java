@@ -1,5 +1,7 @@
 package pl.koder95.dznp.lang.grammar;
 
+import pl.koder95.dznp.core.Data;
+import pl.koder95.dznp.core.DataBuilder;
 import pl.koder95.dznp.util.Stacks;
 
 import java.io.IOException;
@@ -8,13 +10,21 @@ import java.util.*;
 public class Model {
 
     private final List<AssignItem> assignItemList;
+    private final Data data;
 
     private Model(List<AssignItem> assignItemList) {
         this.assignItemList = Collections.unmodifiableList(Objects.requireNonNull(assignItemList));
+        DataBuilder builder = new DataBuilder();
+        for (AssignItem item : this.assignItemList) item.addToBuilder(builder);
+        this.data = builder.build();
     }
 
     public List<AssignItem> getAssignItemList() {
         return assignItemList;
+    }
+
+    public Data getData() {
+        return data;
     }
 
     public static Model from(Stack<Object> stack) throws IOException {
