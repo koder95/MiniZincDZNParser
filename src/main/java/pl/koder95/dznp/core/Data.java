@@ -23,7 +23,8 @@ public interface Data {
 	
 	/**
 	 * Sprawdza, czy dane zawierają podany klucz dostępu.
-	 * 
+	 *
+	 * @param key sprawdzany klucz dostępu
 	 * @return {@code true} jeśli klucz istnieje 
 	 */
 	boolean containsKey(String key);

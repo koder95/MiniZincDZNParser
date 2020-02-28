@@ -3,19 +3,39 @@ package pl.koder95.dznp;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * This class is representation of skipping algorithm system. It manages InputManager
+ * to skip ignored read bytes. You can do this by invoking {@link #skip()}. After that
+ * you can get last read by using {@link #getLastRead()} or get skipped read bytes by
+ * invoking {@link #getSkipped()}.
+ *
+ * @author Kamil Mularski [Koder95]
+ * @version 1.0.0
+ */
 public class Skipper {
 
     private final InputStream input;
 
+    /**
+     * Create new instance with specified InputStream. This stream will read to skip bytes.
+     * @param input stream for reading bytes to skip them
+     */
     public Skipper(InputStream input) {
         this.input = input;
     }
 
-    private int skipped = 0;
+    private int skipped = -1;
     private int lastLastRead = -1;
     private int lastRead = -1;
 
+    /**
+     * Skips ignored bytes and save results which can be read by {@link #getSkipped()} and
+     * {@link #getLastRead()} methods. Before invoking this method getters returns -1.
+     *
+     * @throws IOException see {@link InputStream#read()}
+     */
     public void skip() throws IOException {
+        skipped = 0;
         next();
         while (input.available() > 0) {
             if (lastRead == '\\') {
@@ -35,10 +55,20 @@ public class Skipper {
         this.lastRead = input.read();
     }
 
+    /**
+     * Returns number of bytes skipped during {@link #skip()} method ran.
+     * @return
+     *      {@code -1} - before invoking {@link #skip()},
+     *      {@code >= 0} - after invoking
+     */
     public int getSkipped() {
         return skipped;
     }
 
+    /**
+     * Returns the last byte read during {@link #skip()} method ran.
+     * @return see {@link InputStream#read()}
+     */
     public int getLastRead() {
         return lastRead;
     }
