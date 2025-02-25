@@ -4,7 +4,7 @@
 
     <groupId>pl.koder95</groupId>
     <artifactId>dznp</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>MiniZinc DZN Parser</name>
@@ -49,6 +49,11 @@
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>pl.koder95</groupId>
+            <artifactId>interpreter</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
     <build>

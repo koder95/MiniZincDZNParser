@@ -5,10 +5,7 @@
  */
 package pl.koder95.dznp.core;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Budowniczy interfejsu, który zawiera dane wczytane z pliku DZN.
@@ -32,11 +29,11 @@ public class DataBuilder {
      * Tworzy budowniczego z implementacją mapy typu {@link HashMap}.
      */
     public DataBuilder() {
-        this(new HashMap<String, Object>());
+        this(new HashMap<>());
     }
     
     /**
-     * Pozwala modyfikować mapę przypisując kluczowi wartość.
+     * Pozwala modyfikować mapę, przypisując kluczowi wartość.
      * 
      * @param key klucz dostępu do wartości
      * @param value wartość skojarzona z kluczem
@@ -48,13 +45,13 @@ public class DataBuilder {
     }
     
     /**
-     * Buduje interfajs Data z danymi.
+     * Buduje interfejs Data z danymi.
      * @return instancja {@link Data}
      */
     public Data build() {
         return new Data() {
             public Set<String> keySet() {
-                return map.keySet();
+                return Collections.unmodifiableSet(map.keySet());
             }
 
             public boolean containsKey(String key) {
