@@ -50,6 +50,11 @@
             <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>pl.koder95</groupId>
+            <artifactId>Interpreter</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
