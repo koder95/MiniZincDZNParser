@@ -52,7 +52,7 @@
         </dependency>
         <dependency>
             <groupId>pl.koder95</groupId>
-            <artifactId>Interpreter</artifactId>
+            <artifactId>interpreter</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
